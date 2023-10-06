@@ -18,12 +18,9 @@ def make_api_request(bus_code, headers):
     return eval(response.content)
 
 
-def main():
+def get_bus_data(action):
     lines = read_bus_data()
 
-    action = "go out"  # Replace with voice recognition result
-
-    buses = []
     bus_search = BusArrival()
 
     for line in lines:
@@ -48,8 +45,7 @@ def main():
     except (KeyError, ValueError) as e:
         print(f"Error processing API response: {e}")
 
-
-if __name__ == "__main__":
+def main():
     while True:
         command = si.listen()
 
@@ -61,3 +57,7 @@ if __name__ == "__main__":
 
             if command == "stop":
                 break
+
+
+if __name__ == "__main__":
+    main()
