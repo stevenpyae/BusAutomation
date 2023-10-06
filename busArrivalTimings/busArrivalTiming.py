@@ -55,8 +55,14 @@ def main():
 
             # Add your logic to handle different commands here
 
-            if command == "stop":
-                break
+        if command == "stop":
+            break
+
+        if command == "work":
+            get_bus_data(command)
+
+        if command == "go out":
+            get_bus_data(command)
 
 
 if __name__ == "__main__":
